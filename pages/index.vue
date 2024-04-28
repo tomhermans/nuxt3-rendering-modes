@@ -19,5 +19,8 @@
         <li>
             <NuxtLink to="/isr_ttl">ISR ttl</NuxtLink>
         </li>
+        <li>
+            <NuxtLink to="/wp-ssg">wp-ssg</NuxtLink>
+        </li>
     </ul>
 </template>

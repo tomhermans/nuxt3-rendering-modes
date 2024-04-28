@@ -9,5 +9,43 @@ export default defineNuxtConfig({
     "/swr_no_ttl": { swr: true },
     "/ssg": { prerender: true },
     "/spa": { ssr: false },
+    "/wp-ssg": { isr: 60 },
+    "/wp/**": { isr: true },
+  },
+
+  // router: {
+  //   routes: [
+  //     {
+  //       path: '/pages/wp/:id',
+  //       component: '@/pages/wp/[id].vue'
+  //     }
+  //   ]
+  // },
+
+  // @see https://nuxt.com/docs/getting-started/configuration#environment-variables-and-private-tokens
+  runtimeConfig: {
+    public: {
+      baseUrl: "/",
+      maintenanceMode: false,
+      wpUri: "https://api.collaborationbetterstheworld.com",
+    },
+  },
+  i18n: {
+    defaultLocale: "en",
+    detectBrowserLanguage: false,
+    langDir: "lang/",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+        name: "English",
+      },
+      /* {
+        code: 'de',
+        file: 'de.json'
+        name: 'Deutsch',
+      }, */
+    ],
+    strategy: "prefix_except_default",
   },
 });
